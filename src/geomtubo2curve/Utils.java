@@ -1,5 +1,6 @@
 package geomtubo2curve;
 
+import java.io.Console;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
@@ -35,4 +36,12 @@ public class Utils {
 			e.printStackTrace();
 		}
 	}
+	
+	public static String readDataFromConsole(String prompt) {  
+        Console console = System.console();  
+        if (console == null) {  
+            throw new IllegalStateException("Console is not available!");  
+        }  
+        return console.readLine(prompt);  
+    }  
 }

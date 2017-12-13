@@ -9,8 +9,7 @@ import java.util.regex.Pattern;
 
 public class Main {
 
-	public static void main(String args[]) throws Exception {
-		File file = new File("unshrouded_mesh.geomTurbo");
+	public static void run(File file) throws Exception {
 		String content = Utils.readString(file);
 
 		// 找hub和shroud
@@ -134,5 +133,11 @@ public class Main {
 					configuration.toString());
 			System.out.println("================================");
 		}
+	}
+	
+	public static void main(String args[]) throws Exception {
+		String prompt="请输入需要转换的文件名:(如 's1.gemoturbo')\r\n";
+		String filename = Utils.readDataFromConsole(prompt);
+		run(new File(filename));
 	}
 }
